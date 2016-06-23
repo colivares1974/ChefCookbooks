@@ -16,16 +16,6 @@ platforms:
   driver_config:
     image: centos:6.7
     platform: centos
-- name: oracle_mio
-  driver_config:
-    image: oraclelinux:7
-    platform: centos
-suites:
-  - name: default
-    run_list:
-      - recipe[workstation::default]
-    attributes:
-
 suites:
   - name: default
     run_list:
