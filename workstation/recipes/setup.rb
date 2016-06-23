@@ -1,3 +1,3 @@
-package 'cowsay' do 
+package 'tree' do 
 	action :install
 end

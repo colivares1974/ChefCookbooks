@@ -1,6 +1,6 @@
 ---
 driver:
-  name: vagrant
+  name: docker
 
 provisioner:
   name: chef_zero
@@ -10,9 +10,21 @@ provisioner:
 # verifier:
 #   name: inspec
 
+
 platforms:
-  - name: ubuntu-14.04
-  - name: centos-7.1
+- name: centos-6.7
+  driver_config:
+    image: centos:6.7
+    platform: centos
+- name: oracle_mio
+  driver_config:
+    image: oraclelinux:7
+    platform: centos
+suites:
+  - name: default
+    run_list:
+      - recipe[workstation::default]
+    attributes:
 
 suites:
   - name: default
